@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:08:25 by khirsig           #+#    #+#             */
-/*   Updated: 2022/03/28 14:08:24 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/03/29 09:43:23 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,4 +220,38 @@ int		Fixed::toInt() const
 float	Fixed::toFloat() const
 {
 	return ((float)this->_fixedValue / (1 << this->_fractionalBits));
+}
+
+static Fixed &min(Fixed &first, Fixed &second)
+{
+	if (first.getRawBits() < second.getRawBits())
+		return (first);
+	return (second);
+}
+
+static Fixed &min(const Fixed &first, const Fixed &second)
+{
+	Fixed	ret = first;
+
+	if (ret.getRawBits() < second.getRawBits())
+		return (ret);
+	ret = second;
+	return (ret);
+}
+
+static Fixed &max(Fixed &first, Fixed &second)
+{
+	if (first.getRawBits() > second.getRawBits())
+		return (first);
+	return (second);
+}
+
+static Fixed &max(const Fixed &first, const Fixed &second)
+{
+	Fixed	ret = first;
+
+	if (ret.getRawBits() > second.getRawBits())
+		return (ret);
+	ret = second;
+	return (ret);
 }
