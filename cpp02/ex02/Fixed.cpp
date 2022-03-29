@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:08:25 by khirsig           #+#    #+#             */
-/*   Updated: 2022/03/29 09:43:23 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/03/29 10:11:32 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,13 @@ Fixed	Fixed::operator-=(const Fixed &other)
 
 Fixed	Fixed::operator*=(const Fixed &other)
 {
-	this->_fixedValue *= other._fixedValue;
+	this->_fixedValue *= other._fixedValue / (1 << Fixed::_fractionalBits);
 	return (*this);
 }
 
 Fixed	Fixed::operator/=(const Fixed &other)
 {
-	this->_fixedValue /= other._fixedValue;
+	this->_fixedValue = this->_fixedValue * (1 << Fixed::_fractionalBits) / other._fixedValue;
 	return (*this);
 }
 
@@ -222,36 +222,30 @@ float	Fixed::toFloat() const
 	return ((float)this->_fixedValue / (1 << this->_fractionalBits));
 }
 
-static Fixed &min(Fixed &first, Fixed &second)
+Fixed &Fixed::min(Fixed &first, Fixed &second)
 {
 	if (first.getRawBits() < second.getRawBits())
 		return (first);
 	return (second);
 }
 
-static Fixed &min(const Fixed &first, const Fixed &second)
+const Fixed &Fixed::min(const Fixed &first, const Fixed &second)
 {
-	Fixed	ret = first;
-
-	if (ret.getRawBits() < second.getRawBits())
-		return (ret);
-	ret = second;
-	return (ret);
+	if (first.getRawBits() < second.getRawBits())
+		return (first);
+	return (second);
 }
 
-static Fixed &max(Fixed &first, Fixed &second)
+Fixed &Fixed::max(Fixed &first, Fixed &second)
 {
 	if (first.getRawBits() > second.getRawBits())
 		return (first);
 	return (second);
 }
 
-static Fixed &max(const Fixed &first, const Fixed &second)
+const Fixed &Fixed::max(const Fixed &first, const Fixed &second)
 {
-	Fixed	ret = first;
-
-	if (ret.getRawBits() > second.getRawBits())
-		return (ret);
-	ret = second;
-	return (ret);
+	if (first.getRawBits() > second.getRawBits())
+		return (first);
+	return (second);
 }

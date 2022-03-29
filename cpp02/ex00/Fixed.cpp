@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:08:25 by khirsig           #+#    #+#             */
-/*   Updated: 2022/03/22 09:36:32 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/03/29 12:37:55 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed()
 	std::cout << "Default constructor called." << std::endl;
 }
 
-Fixed::Fixed(Fixed const &input)
+Fixed::Fixed(const Fixed &input)
 {
 	this->_fixedValue = input._fixedValue;
 	std::cout << "Copy constructor called." << std::endl;
@@ -29,7 +29,7 @@ Fixed::~Fixed()
 	std::cout << "Destructor called." << std::endl;
 }
 
-Fixed &Fixed::operator=(Fixed const &other)
+Fixed &Fixed::operator=(const Fixed &other)
 {
 	this->_fixedValue = other._fixedValue;
 	std::cout << "Copy assignment operator called." << std::endl;
