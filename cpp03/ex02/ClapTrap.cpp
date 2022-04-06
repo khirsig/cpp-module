@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:13:10 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 12:38:46 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/04/06 12:49:22 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap()
 			<< "\"Look out everybody! Things are about to get awesome!\" [ClapTrap-Constructor]" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(const std::string name)
 {
 	this->_name = name;
 	this->_damage = 0;
@@ -40,7 +40,7 @@ ClapTrap::ClapTrap(std::string name)
 			<< "\"Look out everybody! Things are about to get awesome!\" [ClapTrap-CConstructor]" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &input)
+ClapTrap::ClapTrap(const ClapTrap &input)
 {
 	*this = input;
 	std::cout << this->_name << " joins the lobby and says: "

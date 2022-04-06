@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:26:47 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 12:39:04 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/04/06 12:49:29 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ FragTrap::FragTrap()
 			<< "\"Recompiling my combat code!\" [FragTrap-Constructor]" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap &input)
+FragTrap::FragTrap(const FragTrap &input)
 {
 	*this = input;
 	std::cout << this->_name << " joins the lobby and says: "
 			<< "\"Recompiling my combat code!\" [FragTrap-Constructor]" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(const std::string name)
 {
 	this->_name = name;
 	this->_hitpoints = 100;

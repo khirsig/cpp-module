@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:01:49 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 11:43:01 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/04/06 12:49:13 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ ScavTrap::ScavTrap()
 			<< "\"Hey everybody! Check out my package!\" [ScavTrap-Constructor]" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap &input)
+ScavTrap::ScavTrap(const ScavTrap &input)
 {
 	*this = input;
 	std::cout << this->_name << " joins the lobby and says: "
 			<< "\"Hey everybody! Check out my package!\" [ScavTrap-Constructor]" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(const std::string name)
 {
 	this->_name = name;
 	this->_hitpoints = 100;

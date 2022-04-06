@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:01:59 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 11:36:20 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/04/06 12:48:18 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap();
-		ScavTrap(ScavTrap &input);
-		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &input);
+		ScavTrap(const std::string name);
 		~ScavTrap();
 
 		void	guardGate();
 };
-
 
 #endif

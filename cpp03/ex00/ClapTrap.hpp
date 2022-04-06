@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:13:27 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 10:17:22 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/04/06 12:48:38 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 class ClapTrap {
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &input);
+		ClapTrap(const std::string name);
+		ClapTrap(const ClapTrap &input);
 		~ClapTrap();
 
 		ClapTrap	&operator=(const ClapTrap &other);
