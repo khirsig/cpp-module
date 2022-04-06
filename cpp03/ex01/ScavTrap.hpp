@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 09:12:11 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 11:00:28 by khirsig          ###   ########.fr       */
+/*   Created: 2022/04/06 11:01:59 by khirsig           #+#    #+#             */
+/*   Updated: 2022/04/06 11:36:20 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main()
-{
-	std::string	alphaName = "Alpha", betaName = "Beta";
-	ClapTrap	alpha(RED + alphaName + END), beta(BLUE + betaName + END);
+# include "ClapTrap.hpp"
 
-	alpha.attack("Beta");
-	beta.takeDamage(5);
-	beta.beRepaired(3);
-	beta.beRepaired(3);
-	beta.beRepaired(3);
-	beta.attack("Alpha");
-	return (0);
-}
+class ScavTrap : public ClapTrap {
+	public:
+		ScavTrap();
+		ScavTrap(ScavTrap &input);
+		ScavTrap(std::string name);
+		~ScavTrap();
+
+		void	guardGate();
+};
+
+
+#endif
