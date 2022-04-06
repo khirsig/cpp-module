@@ -1,64 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 11:01:49 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 11:43:01 by khirsig          ###   ########.fr       */
+/*   Created: 2022/04/06 12:26:47 by khirsig           #+#    #+#             */
+/*   Updated: 2022/04/06 12:39:04 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 /* ************************************************************************** */
 /*   Constructors & Destructors                                               */
 /* ************************************************************************** */
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
 	this->_name = "Unnamed";
 	this->_hitpoints = 100;
-	this->_energy = 50;
-	this->_damage = 20;
+	this->_energy = 100;
+	this->_damage = 30;
 	this->_maxHitpoints = this->_hitpoints;
 	this->_maxEnergy = this->_energy;
 	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Hey everybody! Check out my package!\" [ScavTrap-Constructor]" << std::endl;
+			<< "\"Recompiling my combat code!\" [FragTrap-Constructor]" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap &input)
+FragTrap::FragTrap(FragTrap &input)
 {
 	*this = input;
 	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Hey everybody! Check out my package!\" [ScavTrap-Constructor]" << std::endl;
+			<< "\"Recompiling my combat code!\" [FragTrap-Constructor]" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+FragTrap::FragTrap(std::string name)
 {
 	this->_name = name;
 	this->_hitpoints = 100;
-	this->_energy = 50;
-	this->_damage = 20;
+	this->_energy = 100;
+	this->_damage = 30;
 	this->_maxHitpoints = this->_hitpoints;
 	this->_maxEnergy = this->_energy;
 	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Hey everybody! Check out my package!\" [ScavTrap-Constructor]" << std::endl;
+			<< "\"Recompiling my combat code!\" [FragTrap-Constructor]" << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
 	std::cout << this->_name << " leaves the lobby and says: "
-		<< "\"Dangit, I'm out!\" [ScavTrap-Destructor]" << std::endl;
+		<< "\"(unintelligible snarling)\" [FragTrap-Destructor]" << std::endl;
 }
 
 /* ************************************************************************** */
 /*   Member Functions                                                         */
 /* ************************************************************************** */
 
-void	ScavTrap::guardGate()
+void	FragTrap::highFivesGuys()
 {
-	std::cout << this->_name << " is now in Gate Keeper mode and says: "
-			<< "\"You wanna fight with me?! Put 'em up!.. Put 'em up?\"" << std::endl;
+	std::cout << this->_name << " yells: Gimme five!" << std::endl;
 }

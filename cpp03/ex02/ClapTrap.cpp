@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:13:10 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 11:42:49 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/04/06 12:38:46 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@ ClapTrap::ClapTrap(std::string name)
 	this->_maxHitpoints = this->_hitpoints;
 	this->_maxEnergy = this->_energy;
 	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Look out everybody! Things are about to get awesome!\" [ClapTrap-Constructor]" << std::endl;
+			<< "\"Look out everybody! Things are about to get awesome!\" [ClapTrap-CConstructor]" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &input)
 {
 	*this = input;
 	std::cout << this->_name << " joins the lobby and says: "
-		<< "\"Look out everybody! Things are about to get awesome!\" [ClapTrap-Constructor]" << std::endl;
+		<< "\"Look out everybody! Things are about to get awesome!\" [ClapTrap-CConstructor]" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
 	std::cout << this->_name << " leaves the lobby and says: "
-		<< "\"Good thing I don't have a soul!\" [ClapTrap-Destructor]" << std::endl;
+		<< "\"Good thing I don't have a soul!\" [ClapTrap-CDestructor]" << std::endl;
 }
 
 /* ************************************************************************** */
