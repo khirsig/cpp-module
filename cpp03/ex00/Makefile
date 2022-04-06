@@ -1,15 +1,15 @@
 CC = c++
 
-NAME = fixed
+NAME = claptrap
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 OBJDIR = ./obj/
 OBJECTS = $(OBJDIR)/*.o
 SRC =	main.cpp				\
-		Fixed.cpp				\
+		ClapTrap.cpp			\
 
-HEAD =	Fixed.h					\
+HEAD =	ClapTrap.hpp			\
 
 all: $(NAME)
 

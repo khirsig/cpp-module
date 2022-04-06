@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 09:41:55 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/05 15:46:26 by khirsig          ###   ########.fr       */
+/*   Created: 2022/04/06 09:12:11 by khirsig           #+#    #+#             */
+/*   Updated: 2022/04/06 10:28:55 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "megaphone.hpp"
+#include "ClapTrap.hpp"
 
-int	main(int argc, char **argv)
+int	main()
 {
-	if (argc <= 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	for (int i = 1; i < argc; ++i)
-	{
-		std::string	input = argv[i];
-		unsigned int len = input.length();
-		for (unsigned int j = 0; j < len; ++j)
-			input[j] = toupper(input[j]);
-		std::cout << input;
-	}
-	std::cout << std::endl;
+	std::string	alphaName = "Alpha", betaName = "Beta";
+	ClapTrap	alpha(RED + alphaName + END), beta(BLUE + betaName + END);
+
+	alpha.attack("Beta");
+	beta.takeDamage(10);
+	alpha.beRepaired(3);
+	beta.attack("Alpha");
 	return (0);
 }
