@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:12:11 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/02 13:58:56 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/02 14:48:06 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main()
 	std::string	alphaName = "Alpha";
 	DiamondTrap	alpha(RED + alphaName + END);
 
-	alpha.attack(BLUE + betaName + END);
 	alpha.whoAmI();
 	return (0);
 }
