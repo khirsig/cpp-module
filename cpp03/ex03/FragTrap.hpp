@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:26:56 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 12:55:04 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/02 11:16:57 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : virtual public ClapTrap {
+class FragTrap : public virtual ClapTrap {
 	public:
 		FragTrap();
 		FragTrap(const FragTrap &input);

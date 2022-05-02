@@ -5,59 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 12:49:46 by khirsig           #+#    #+#             */
-/*   Updated: 2022/04/06 12:58:21 by khirsig          ###   ########.fr       */
+/*   Created: 2022/05/02 11:17:09 by khirsig           #+#    #+#             */
+/*   Updated: 2022/05/02 13:57:48 by khirsig          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*   Constructors & Destructors                                               */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
 {
-	this->_name = "Unnamed";
 	this->_hitpoints = FragTrap::_hitpoints;
 	this->_energy = ScavTrap::_energy;
 	this->_damage = FragTrap::_damage;
-	this->_maxHitpoints = this->_hitpoints;
-	this->_maxEnergy = this->_energy;
-	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Recompiling my combat code!\" [DiamondTrap-Constructor]" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &input)
 {
-	*this = input;
-	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Recompiling my combat code!\" [DiamondTrap-Constructor]" << std::endl;
+	this->_name = input._name;
+	ClapTrap::_name = this->_name + "_clap_name";
+	this->_hitpoints = input._hitpoints;
+	this->_energy = input._energy;
+	this->_damage = input._damage;
 }
 
 DiamondTrap::DiamondTrap(const std::string name)
 {
 	this->_name = name;
+	ClapTrap::_name = this->_name + "_clap_name";
 	this->_hitpoints = FragTrap::_hitpoints;
 	this->_energy = ScavTrap::_energy;
 	this->_damage = FragTrap::_damage;
-	this->_maxHitpoints = this->_hitpoints;
-	this->_maxEnergy = this->_energy;
-	std::cout << this->_name << " joins the lobby and says: "
-			<< "\"Recompiling my combat code!\" [DiamondTrap-Constructor]" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << this->_name << " leaves the lobby and says: "
-		<< "\"(unintelligible snarling)\" [DiamondTrap-Destructor]" << std::endl;
+
 }
 
-/* ************************************************************************** */
-/*   Member Functions                                                         */
-/* ************************************************************************** */
+void	DiamondTrap::attack(const std::string &target)
+{
+	ScavTrap::attack(target);
+}
 
 void	DiamondTrap::whoAmI()
 {
-
+	std::cout << "My name is: " << this->_name
+			<< " and my ClapTrap name is: " << ClapTrap::_name << std::endl;
 }

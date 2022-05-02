@@ -1,6 +1,6 @@
 CC = c++
 
-NAME = fragtrap
+NAME = diamondtrap
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
@@ -10,10 +10,12 @@ SRC =	main.cpp				\
 		ClapTrap.cpp			\
 		ScavTrap.cpp			\
 		FragTrap.cpp			\
+		DiamondTrap.cpp			\
 
 HEAD =	ClapTrap.hpp			\
 		ScavTrap.hpp			\
 		FragTrap.hpp			\
+		DiamondTrap.hpp			\
 
 all: $(NAME)
 
