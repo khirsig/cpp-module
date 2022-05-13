@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 12:59:41 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/13 09:34:34 by khirsig          ###   ########.fr       */
+/*   Created: 2022/05/13 09:47:42 by khirsig           #+#    #+#             */
+/*   Updated: 2022/05/13 09:48:04 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-int	main()
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+class ICharacter {
 
-	delete j;
-	delete i;
-	return 0;
-}
+};
+
+#endif

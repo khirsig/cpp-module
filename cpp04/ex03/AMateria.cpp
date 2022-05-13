@@ -1,24 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 12:59:41 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/13 09:34:34 by khirsig          ###   ########.fr       */
+/*   Created: 2022/05/13 09:42:39 by khirsig           #+#    #+#             */
+/*   Updated: 2022/05/13 09:42:45 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-
-int	main()
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	delete j;
-	delete i;
-	return 0;
-}
+#include "AMateria.hpp"

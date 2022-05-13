@@ -6,14 +6,18 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:01:18 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/12 10:44:28 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/12 14:29:04 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
+Animal::Animal(const Animal &other)
+{
+	*this = other;
+}
 
-Animal	&Animal::operator=(const Animal other)
+Animal	&Animal::operator=(const Animal &other)
 {
 	this->_type = other._type;
 

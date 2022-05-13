@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 12:59:41 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/13 09:34:34 by khirsig          ###   ########.fr       */
+/*   Created: 2022/05/13 09:42:46 by khirsig           #+#    #+#             */
+/*   Updated: 2022/05/13 09:49:12 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-int	main()
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+# include <string>
+# include <iostream>
+# include "ICharacter.hpp"
 
-	delete j;
-	delete i;
-	return 0;
-}
+class AMateria {
+	public:
+		AMateria(const std::string &type);
+		~AMateria();
+
+		const std::string	&getType() const;
+
+		virtual AMateria	*clone() const = 0;
+		virtual void		use(ICharacter &target);
+	protected:
+		AMateria();
+};
+
+
+#endif
