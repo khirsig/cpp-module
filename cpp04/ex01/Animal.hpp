@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:01:02 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/12 15:39:29 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/13 09:29:03 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal {
 	public:
 		Animal() { }
 		Animal(const Animal &other);
-		~Animal() { }
+		virtual ~Animal();
 
 		Animal	&operator=(const Animal &other);
 
