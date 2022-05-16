@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 14:20:05 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/12 15:54:52 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/16 11:11:30 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ class Brain {
 
 		Brain	&operator=(const Brain &other);
 
+		void		setIdea(const std::string input, int index);
+		std::string	getIdea(int index) const;
+	private:
 		std::string	ideas[100];
 };
 

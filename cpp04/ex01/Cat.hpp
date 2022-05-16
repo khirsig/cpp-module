@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:00:37 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/12 16:11:25 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/16 11:31:17 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class Cat : public Animal {
 
 		Cat	&operator=(const Cat &other);
 
-		void makeSound() const;
+		void		makeSound() const;
+		void		setBrain(const std::string input, int index) const;
+		std::string	getBrain(int index);
 	private:
 		Brain *_brain;
 };
