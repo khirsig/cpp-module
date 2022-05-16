@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:01:02 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/12 14:29:14 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/16 12:00:42 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 class WrongAnimal {
 	public:
-		WrongAnimal() { }
+		WrongAnimal();
 		WrongAnimal(const WrongAnimal &other);
-		~WrongAnimal() { }
+		~WrongAnimal();
 
 		WrongAnimal	&operator=(const WrongAnimal &other);
 

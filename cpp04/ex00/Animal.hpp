@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:01:02 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/12 14:29:06 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/16 11:49:52 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 class Animal {
 	public:
-		Animal() { }
+		Animal();
 		Animal(const Animal &other);
-		~Animal() { }
+		~Animal();
 
 		Animal	&operator=(const Animal &other);
 
