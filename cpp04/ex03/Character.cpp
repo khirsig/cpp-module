@@ -1,44 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 09:42:39 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/16 14:54:46 by khirsig          ###   ########.fr       */
+/*   Created: 2022/05/16 15:01:46 by khirsig           #+#    #+#             */
+/*   Updated: 2022/05/16 15:20:50 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Character.hpp"
 
-AMateria::AMateria() { }
-
-AMateria::AMateria(const std::string &type)
+Character::Character()
 {
-	this->_type = type;
+
 }
 
-AMateria::AMateria(const AMateria &input)
+Character::Character(const std::string &name)
 {
-	*this = input;
+
 }
 
-AMateria::~AMateria() { }
-
-AMateria &AMateria::operator=(const AMateria &input)
+Character::Character(const Character &other)
 {
-	this->_type = input._type;
 
-	return (*this);
 }
 
-const std::string	&AMateria::getType() const
+Character::~Character()
 {
-	return (this->_type);
+
 }
 
-void		AMateria::use(ICharacter &target)
+const std::string	&Character::getName() const
 {
-	(void)target;
+	return (this->_name);
+}
+
+void	Character::equip(AMateria *m)
+{
+
+}
+
+void	Character::unequip(int idx)
+{
+
+}
+
+void	Character::use(int idx, ICharacter &target)
+{
+
 }
