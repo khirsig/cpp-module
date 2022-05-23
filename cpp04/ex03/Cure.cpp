@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:12:43 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/16 14:50:42 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/23 10:10:47 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ AMateria	*Cure::clone() const
 
 void	Cure::use(ICharacter &target)
 {
-	(void)target;
+	std::cout << " heals " << target.getName() << "'s wounds *" << std::endl;
 }

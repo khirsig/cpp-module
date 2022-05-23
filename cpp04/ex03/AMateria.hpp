@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 09:42:46 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/16 14:53:39 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/05/23 10:06:45 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AMateria {
 	public:
 		AMateria(const std::string &type);
 		AMateria(const AMateria &input);
-		~AMateria();
+		virtual ~AMateria();
 
 		AMateria &operator=(const AMateria &input);
 

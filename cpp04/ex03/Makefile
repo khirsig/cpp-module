@@ -8,12 +8,18 @@ OBJDIR = ./obj/
 OBJECTS = $(OBJDIR)/*.o
 SRC =	main.cpp				\
 		AMateria.cpp			\
-		ICharacter.cpp			\
+		Character.cpp			\
 		Cure.cpp				\
+		Ice.cpp					\
+		MateriaSource.cpp		\
 
 HEAD =	AMateria.hpp			\
 		ICharacter.hpp			\
+		Character.hpp			\
 		Cure.hpp				\
+		Ice.hpp					\
+		IMateriaSource.hpp		\
+		MateriaSource.hpp		\
 
 all: $(NAME)
 
