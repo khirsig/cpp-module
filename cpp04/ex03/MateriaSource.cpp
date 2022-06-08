@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 12:38:01 by khirsig           #+#    #+#             */
-/*   Updated: 2022/05/23 13:11:46 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/08 10:47:27 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 MateriaSource::MateriaSource()
 {
-
+	for (int i = 0; i < 4; ++i)
+		this->_inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other)
