@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:14:48 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 10:02:19 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 12:05:47 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ class Bureaucrat {
 		int			getGrade() const;
 		void		incrementGrade();
 		void		decrementGrade();
-		void		signForm(Form &f);
+		void		signForm(Form &form);
+		void		executeForm(const Form &form);
 	private:
 		const std::string	_name;
 		int					_grade;

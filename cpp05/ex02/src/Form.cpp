@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:39:39 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 11:53:17 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 12:05:21 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,6 @@ void	Form::execute(const Bureaucrat &executor) const
 		throw (Form::FormUnsignedException());
 	if (this->_gradeExecute < executor.getGrade())
 		throw (Form::GradeTooLowException());
-	std::cout << executor.getName()
-		<< " executes "
-		<< this->_name
-		<< std::endl;
 	this->action();
 }
 

@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:07:16 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 12:03:02 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 12:07:38 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main()
 		permitA38->beSigned(tim);
 		std::cout << *permitA38
 			<< std::endl;
-		permitA38->execute(tim);
+		tim.executeForm(*permitA38);
 		delete permitA38;
 
 		std::cout << *permitA39
@@ -39,7 +39,7 @@ int	main()
 		permitA39->beSigned(tim);
 		std::cout << *permitA39
 			<< std::endl;
-		permitA39->execute(tim);
+		tim.executeForm(*permitA39);
 		delete permitA39;
 
 		std::cout << *permitA41
@@ -47,7 +47,7 @@ int	main()
 		permitA41->beSigned(tim);
 		std::cout << *permitA41
 			<< std::endl;
-		permitA41->execute(tim);
+		tim.executeForm(*permitA41);
 		delete permitA41;
 	}
 	catch (const std::exception &e)
