@@ -6,7 +6,7 @@
 #    By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 11:34:34 by khirsig           #+#    #+#              #
-#    Updated: 2022/06/09 09:16:44 by khirsig          ###   ########.fr        #
+#    Updated: 2022/06/09 12:02:34 by khirsig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ CFLAGS			:= -std=c++98 -Wall -Werror -Wextra
 SRCS			:= main.cpp									\
 				Bureaucrat.cpp								\
 				Form.cpp									\
+				ShrubberyCreationForm.cpp					\
+				RobotomyRequestForm.cpp						\
+				PresidentialPardonForm.cpp					\
 
 OS				:= $(shell uname -s)
 NUMPROC			:= 8

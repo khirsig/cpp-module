@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:39:39 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 10:06:37 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 11:53:17 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ std::ostream &operator<<(std::ostream &os, const Form &output)
 		os << "signed";
 	else
 		os << "not signed";
-	os << ", has a sign grade of "
+	os << ", needs a grade to sign of "
 		<< output.getGradeSign()
-		<< " and a execute grade of "
+		<< " and a grade to execute of "
 		<< output.getGradeExecute()
 		<< ".";
 	return (os);
@@ -92,6 +92,19 @@ void	Form::beSigned(const Bureaucrat &b)
 	this->_isSigned = true;
 }
 
+void	Form::execute(const Bureaucrat &executor) const
+{
+	if (!this->_isSigned)
+		throw (Form::FormUnsignedException());
+	if (this->_gradeExecute < executor.getGrade())
+		throw (Form::GradeTooLowException());
+	std::cout << executor.getName()
+		<< " executes "
+		<< this->_name
+		<< std::endl;
+	this->action();
+}
+
 /* ************************************************************************** */
 /*   Sub Class Functions                                                      */
 /* ************************************************************************** */
@@ -100,7 +113,13 @@ const char *Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high.");
 }
+
 const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low.");
+}
+
+const char *Form::FormUnsignedException::what() const throw()
+{
+	return ("Form is not signed.");
 }
