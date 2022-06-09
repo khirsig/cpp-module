@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:56:36 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 11:58:33 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 13:30:18 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,9 @@ void	PresidentialPardonForm::action() const
 	std::cout << this->_target
 		<< " has been pardoned by Zaphod Beeblebrox."
 		<< std::endl;
+}
+
+Form	*PresidentialPardonForm::create(std::string target)
+{
+	return (new PresidentialPardonForm(target));
 }

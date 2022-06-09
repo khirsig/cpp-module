@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:54:13 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 12:01:41 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 13:48:17 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class PresidentialPardonForm : public Form {
 
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm &other);
 
-		void	action() const;
+		void		action() const;
+		static Form	*create(const std::string target);
 	private:
 		std::string	_target;
 };

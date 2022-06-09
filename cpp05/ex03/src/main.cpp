@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:07:16 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 12:07:38 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 12:49:35 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 #include "../include/ShrubberyCreationForm.hpp"
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/PresidentialPardonForm.hpp"
+#include "../include/Intern.hpp"
 
 int	main()
 {
 	try
 	{
 		Bureaucrat tim("Tim", 5);
-		Form *permitA38 = new ShrubberyCreationForm("home");
+		Intern	esra;
+		Form *permitA38 = esra.makeForm("ShrubberyCreationForm", "home");
 		Form *permitA39 = new RobotomyRequestForm("Hannes");
 		Form *permitA41 = new PresidentialPardonForm("Anna");
 

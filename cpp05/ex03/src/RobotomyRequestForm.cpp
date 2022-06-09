@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:42:15 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 11:48:30 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 13:38:29 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,9 @@ void	RobotomyRequestForm::action() const
 		<< this->_target
 		<< " has been robotomized successfully 50% of the time."
 		<< std::endl;
+}
+
+Form	*RobotomyRequestForm::create(std::string target)
+{
+	return (new RobotomyRequestForm(target));
 }

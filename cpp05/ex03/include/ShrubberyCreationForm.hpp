@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:22:40 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 11:45:43 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 13:48:29 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class ShrubberyCreationForm : public Form {
 
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &other);
 
-		void	action() const;
+		void		action() const;
+		static Form	*create(const std::string target);
 	private:
 		std::string	_target;
 };

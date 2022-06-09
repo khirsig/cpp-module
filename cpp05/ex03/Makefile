@@ -6,7 +6,7 @@
 #    By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 11:34:34 by khirsig           #+#    #+#              #
-#    Updated: 2022/06/09 12:02:34 by khirsig          ###   ########.fr        #
+#    Updated: 2022/06/09 12:50:04 by khirsig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS			:= main.cpp									\
 				ShrubberyCreationForm.cpp					\
 				RobotomyRequestForm.cpp						\
 				PresidentialPardonForm.cpp					\
+				Intern.cpp									\
 
 OS				:= $(shell uname -s)
 NUMPROC			:= 8

@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:28:42 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 11:43:09 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/09 13:30:09 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ void	ShrubberyCreationForm::action() const
 	file.open(fileName, std::ofstream::out | std::ofstream::trunc);
 	file << "ASCII trees";
 	file.close();
+}
+
+Form	*ShrubberyCreationForm::create(std::string target)
+{
+	return (new ShrubberyCreationForm(target));
 }

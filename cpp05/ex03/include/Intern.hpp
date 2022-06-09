@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 11:38:48 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/09 13:48:20 by khirsig          ###   ########.fr       */
+/*   Created: 2022/06/09 12:17:33 by khirsig           #+#    #+#             */
+/*   Updated: 2022/06/09 12:48:50 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMY_REQUEST_FORM_HPP
-# define ROBOTOMY_REQUEST_FORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
+# include <string>
 # include "Form.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
-class RobotomyRequestForm : public Form {
+class Intern {
 	public:
-		RobotomyRequestForm();
-		RobotomyRequestForm(const std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &other);
-		~RobotomyRequestForm();
+		Intern();
+		Intern(const Intern &other);
+		~Intern();
 
-		RobotomyRequestForm	&operator=(const RobotomyRequestForm &other);
+		Intern	&operator=(const Intern &other);
 
-		void		action() const;
-		static Form	*create(const std::string target);
-	private:
-		std::string	_target;
+		Form	*makeForm(std::string name, std::string target);
 };
 
 #endif
