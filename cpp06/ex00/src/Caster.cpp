@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:52:27 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/13 12:19:48 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/13 14:14:31 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		Caster::toInt() const
 	if (!(this->_input.find_first_not_of(".+-0123456789") == std::string::npos))
 		throw (Caster::ImpossibleException());
 	std::istringstream(this->_input) >> i;
-	if (i > std::numeric_limits<int>::max() || i < std::numeric_limits<int>::min())
+	if (i > std::numeric_limits<int>::max() || i < std::numeric_limits<int>::lowest())
 		throw (Caster::ImpossibleException());
 
 	return ((int)i);
@@ -75,7 +75,7 @@ float	Caster::toFloat() const
 	if (!(this->_input.find_first_not_of(".+-0123456789") == std::string::npos))
 		throw (Caster::ImpossibleException());
 	f = strtof(this->_input.c_str(), NULL);
-	if (f > std::numeric_limits<float>::max() || f < std::numeric_limits<float>::min())
+	if (f > std::numeric_limits<float>::max() || f < std::numeric_limits<float>::lowest())
 		throw (Caster::ImpossibleException());
 	return ((float)f);
 }
@@ -93,7 +93,7 @@ double	Caster::toDouble() const
 	if (!(this->_input.find_first_not_of(".+-0123456789") == std::string::npos))
 		throw (Caster::ImpossibleException());
 	d = strtod(this->_input.c_str(), NULL);
-	if (d > std::numeric_limits<double>::max() || d < std::numeric_limits<double>::min())
+	if (d > std::numeric_limits<double>::max() || d < std::numeric_limits<double>::lowest())
 		throw (Caster::ImpossibleException());
 	return ((double)d);
 }
