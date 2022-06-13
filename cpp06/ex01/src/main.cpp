@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:30:52 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/13 14:59:07 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/13 15:04:06 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Data* deserialize(std::uintptr_t raw)
 
 int	main()
 {
-	Data *data = new Data("The tjensen & hepple Raytracer is the best raytracer.");
+	Data *data = new Data("Change my mind: The hepple & tjensen raytracer is the best one ever created.");
 
 	std::cout << "### Before Serialization ###"
 		<< std::endl

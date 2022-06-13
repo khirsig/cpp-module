@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:36:39 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/13 14:56:46 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/13 15:05:54 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 # include <iostream>
 
-class Data {
+struct Data {
 	public:
 		Data();
 		Data(const std::string content);
@@ -33,6 +33,5 @@ class Data {
 
 Data*	deserialize(std::uintptr_t raw);
 std::uintptr_t serialize(Data* ptr);
-
 
 #endif
