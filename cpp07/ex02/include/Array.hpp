@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 10:58:36 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/14 12:23:38 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/14 12:30:11 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ template <typename type> class Array {
 	};
 };
 
-# include "../src/Array.cpp"
+# include "../src/Array.tpp"
 
 #endif
