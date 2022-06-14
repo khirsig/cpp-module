@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.cpp                                          :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 11:04:32 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/14 12:26:45 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/14 12:37:04 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Array<type>::~Array()
 template <typename type>
 Array<type>	&Array<type>::operator=(const Array<type> &other)
 {
-	if (this->_content != NULL)
+	if (this->_size > 0)
 		delete (this->_content);
 	this->_size = other.size();
 	if (this->_size > 0)
@@ -59,7 +59,7 @@ Array<type>	&Array<type>::operator=(const Array<type> &other)
 template <typename type>
 type	&Array<type>::operator[](int i)
 {
-	if (this->_size <= 0 || i >= this->_size)
+	if (this->_size <= 0 || i >= this->_size || i < 0)
 		throw (Array<type>::NotAllocatedException());
 	return (this->_content[i]);
 }
