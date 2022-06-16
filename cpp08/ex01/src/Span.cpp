@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:35:58 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/15 09:05:34 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/16 11:20:10 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,27 @@ void	Span::addNumber(int nbr)
 
 	for (it = this->_content.begin(); it < this->_content.end(); ++it)
 	{
+		if (this->_content.size() + 1 > this->_N)
+			throw (Span::MaximumNumbersException());
 		if (*it == nbr)
 			throw (Span::AlreadyStoredException());
 	}
 	this->_content.push_back(nbr);
 }
 
+void	Span::addManyNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	std::vector<int>::iterator it;
+
+	for (it = begin; it < end; ++it)
+		addNumber(*it);
+}
+
 unsigned int	Span::longestSpan()
 {
+	if (this->_content.size() <= 1)
+		throw (OutOfBoundsException());
+
 	std::vector<int>::iterator it;
 	int	min = *this->_content.begin(), max = *this->_content.begin();
 
@@ -73,7 +86,27 @@ unsigned int	Span::longestSpan()
 
 unsigned int	Span::shortestSpan()
 {
-	return (0);
+	if (this->_content.size() <= 1)
+		throw (OutOfBoundsException());
+
+	std::vector<int>::iterator	it;
+	std::vector<int>			vec;
+
+	vec = this->_content;
+	std::sort(vec.begin(), vec.end());
+	std::reverse(vec.begin(), vec.end());
+
+	int	min = *(vec.end() - 1), max = *vec.begin();
+
+	for (it = vec.begin(); it < vec.end() - 1; ++it)
+	{
+		if (*it - *(it + 1) < max - min)
+		{
+			max = *it;
+			min = *(it + 1);
+		}
+	}
+	return (max - min);
 }
 
 const char *Span::OutOfBoundsException::what() const throw()
@@ -84,4 +117,9 @@ const char *Span::OutOfBoundsException::what() const throw()
 const char *Span::AlreadyStoredException::what() const throw()
 {
 	return ("Number trying to add is already stored.");
+}
+
+const char *Span::MaximumNumbersException::what() const throw()
+{
+	return ("Maximum amount of possible numbers already reached.");
 }
