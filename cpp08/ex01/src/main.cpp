@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:27:22 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/16 11:24:10 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/16 11:27:41 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,6 @@ int	main()
 		Span span(maxNbrs);
 		span.addNumber(1);
 		span.addNumber(1);
-
-		std::cout << "Long: "
-			<< span.longestSpan() << std::endl;
-		std::cout << "Short: "
-			<< span.shortestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
