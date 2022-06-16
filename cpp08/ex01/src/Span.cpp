@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:35:58 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/16 11:20:10 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/16 11:26:48 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Span	&Span::operator=(const Span &other)
 
 int		&Span::operator[](const unsigned int N)
 {
-	if (N >= this->_N)
+	if (N >= this->_content.size())
 		throw (Span::OutOfBoundsException());
 	return (this->_content[N]);
 }
@@ -69,7 +69,7 @@ void	Span::addManyNumbers(std::vector<int>::iterator begin, std::vector<int>::it
 unsigned int	Span::longestSpan()
 {
 	if (this->_content.size() <= 1)
-		throw (OutOfBoundsException());
+		throw (NotEnoughNumbersException());
 
 	std::vector<int>::iterator it;
 	int	min = *this->_content.begin(), max = *this->_content.begin();
@@ -87,7 +87,7 @@ unsigned int	Span::longestSpan()
 unsigned int	Span::shortestSpan()
 {
 	if (this->_content.size() <= 1)
-		throw (OutOfBoundsException());
+		throw (NotEnoughNumbersException());
 
 	std::vector<int>::iterator	it;
 	std::vector<int>			vec;
@@ -122,4 +122,9 @@ const char *Span::AlreadyStoredException::what() const throw()
 const char *Span::MaximumNumbersException::what() const throw()
 {
 	return ("Maximum amount of possible numbers already reached.");
+}
+
+const char *Span::NotEnoughNumbersException::what() const throw()
+{
+	return ("Not enough numbers to check Span length.");
 }

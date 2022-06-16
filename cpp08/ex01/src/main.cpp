@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:27:22 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/16 11:21:43 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/16 11:24:10 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,34 @@ int	main()
 		Span span(maxNbrs);
 		span.addNumber(1);
 		span.addNumber(1);
+
+		std::cout << "Long: "
+			<< span.longestSpan() << std::endl;
+		std::cout << "Short: "
+			<< span.shortestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << std::endl
+		<< "### Too many Numbers Test ###" << std::endl;
+	try {
+		std::vector<int> input;
+
+		int i = 0;
+		while (i < 20)
+		{
+			int	rnd = rand() % 200;
+			if (std::find(input.begin(), input.end(), rnd) == input.end())
+			{
+				input.push_back(rnd);
+				++i;
+			}
+		}
+		Span span(maxNbrs);
+		span.addManyNumbers(input.begin(), input.end());
 
 		std::cout << "Long: "
 			<< span.longestSpan() << std::endl;

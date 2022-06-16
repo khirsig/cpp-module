@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:27:58 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/16 09:54:19 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/06/16 11:24:57 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ class Span {
 		virtual const char *what() const throw();
 	};
 	class MaximumNumbersException : public std::exception {
+		virtual const char *what() const throw();
+	};
+	class NotEnoughNumbersException : public std::exception {
 		virtual const char *what() const throw();
 	};
 };
