@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:27:22 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/16 11:27:41 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/07/04 10:27:38 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main()
 			}
 		}
 		Span span(maxNbrs);
-		span.addManyNumbers(input.begin(), input.end());
+		span.addNumber(input.begin(), input.end());
 
 		std::cout << "Long: "
 			<< span.longestSpan() << std::endl;
@@ -53,7 +53,7 @@ int	main()
 		std::vector<int> input(arr, arr + 8);
 
 		Span span(maxNbrs);
-		span.addManyNumbers(input.begin(), input.end());
+		span.addNumber(input.begin(), input.end());
 
 		std::cout << "Long: "
 			<< span.longestSpan() << std::endl;
@@ -81,11 +81,15 @@ int	main()
 	}
 
 	std::cout << std::endl
-		<< "### Already Stored Numbers Test ###" << std::endl;
+		<< "### Span of 0 Test ###" << std::endl;
 	try {
 		Span span(maxNbrs);
 		span.addNumber(1);
 		span.addNumber(1);
+		std::cout << "Long: "
+			<< span.longestSpan() << std::endl;
+		std::cout << "Short: "
+			<< span.shortestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -108,7 +112,7 @@ int	main()
 			}
 		}
 		Span span(maxNbrs);
-		span.addManyNumbers(input.begin(), input.end());
+		span.addNumber(input.begin(), input.end());
 
 		std::cout << "Long: "
 			<< span.longestSpan() << std::endl;
@@ -137,7 +141,7 @@ int	main()
 			}
 		}
 		Span span(maxNbrs);
-		span.addManyNumbers(input.begin(), input.end());
+		span.addNumber(input.begin(), input.end());
 
 		std::cout << "Long: "
 			<< span.longestSpan() << std::endl;

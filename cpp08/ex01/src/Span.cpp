@@ -6,7 +6,7 @@
 /*   By: khirsig <khirsig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 08:35:58 by khirsig           #+#    #+#             */
-/*   Updated: 2022/06/16 11:26:48 by khirsig          ###   ########.fr       */
+/*   Updated: 2022/07/04 10:21:01 by khirsig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,11 @@ void	Span::addNumber(int nbr)
 	{
 		if (this->_content.size() + 1 > this->_N)
 			throw (Span::MaximumNumbersException());
-		if (*it == nbr)
-			throw (Span::AlreadyStoredException());
 	}
 	this->_content.push_back(nbr);
 }
 
-void	Span::addManyNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	std::vector<int>::iterator it;
 
@@ -112,11 +110,6 @@ unsigned int	Span::shortestSpan()
 const char *Span::OutOfBoundsException::what() const throw()
 {
 	return ("Memory trying to access is out of bounds.");
-}
-
-const char *Span::AlreadyStoredException::what() const throw()
-{
-	return ("Number trying to add is already stored.");
 }
 
 const char *Span::MaximumNumbersException::what() const throw()
